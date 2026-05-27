@@ -36,3 +36,20 @@ def fibonacci(n):
     """
     # TODO: Replace this with your implementation
     raise NotImplementedError("fibonacci() is not yet implemented.")
+    def fibonacci(n):
+
+if not isinstance(n, int):
+        raise TypeError("n must be an integer")
+
+    if n < 0:
+        raise ValueError("n must be greater than or equal to 0")
+
+    if n in (0, 1):
+        return n
+
+    previous, current = 0, 1
+
+    for _ in range(2, n + 1):
+        previous, current = current, previous + current
+
+    return current
